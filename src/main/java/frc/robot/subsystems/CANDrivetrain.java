@@ -15,6 +15,7 @@ import com.revrobotics.spark.config.SparkBaseConfig;
 import com.revrobotics.spark.config.SparkMaxConfig;
 import com.revrobotics.spark.SparkMax;
 
+
 import edu.wpi.first.wpilibj.drive.MecanumDrive;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
@@ -32,6 +33,7 @@ public class CANDrivetrain extends SubsystemBase {
     SparkMax leftRear = new SparkMax(kLeftRearID, MotorType.kBrushless);
     SparkMax rightFront = new SparkMax(kRightFrontID, MotorType.kBrushless);
     SparkMax rightRear = new SparkMax(kRightRearID, MotorType.kBrushless);
+    
      
     //.smartCurrentLimit(50)
 
