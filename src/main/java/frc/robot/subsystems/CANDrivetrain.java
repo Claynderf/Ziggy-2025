@@ -17,6 +17,7 @@ import com.revrobotics.spark.SparkMax;
 
 
 import edu.wpi.first.wpilibj.drive.MecanumDrive;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 /* This class declares the subsystem for the robot drivetrain if controllers are connected via CAN. Make sure to go to
@@ -50,7 +51,10 @@ public class CANDrivetrain extends SubsystemBase {
     //rightFront.setSmartCurrentLimit(kCurrentLimit);
     //rightRear.setSmartCurrentLimit(kCurrentLimit);
     
-
+    SmartDashboard.putNumber("left front wheel", leftFront.getEncoder().getPosition());
+    SmartDashboard.putNumber("left rear wheel", leftRear.getEncoder().getPosition());
+    SmartDashboard.putNumber("right front wheel", rightFront.getEncoder().getPosition());
+    SmartDashboard.putNumber("right rear wheel", rightRear.getEncoder().getPosition());
     // Put the front motors into the differential drive object. This will control all 4 motors with
     // the rears set to follow the fronts
     m_drivetrain = new MecanumDrive(leftFront, leftRear, rightFront, rightRear);
@@ -61,7 +65,11 @@ public class CANDrivetrain extends SubsystemBase {
   public void driveCartesian(double xSpeed, double ySpeed, double rotation) {
     m_drivetrain.driveCartesian(xSpeed, ySpeed, rotation);
   }
+public double[] getpositions() {
+return new double[] {leftFront.getEncoder().getPosition(), leftRear.getEncoder().getPosition(),
+   rightFront.getEncoder().getPosition(), rightRear.getEncoder().getPosition()};
 
+}
   @Override
   public void periodic() {
     /*This method will be called once per scheduler run. It can be used for running tasks we know we want to update each
