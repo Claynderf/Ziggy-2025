@@ -60,7 +60,7 @@ public class RobotContainer {
          new RunCommand(
              () ->
                  m_drivetrain.driveCartesian(
-                     -m_driverController.getLeftY(), -m_driverController.getLeftX(),-m_driverController.getRightX() ),
+                     -m_driverController.getLeftY()/6 , -m_driverController.getLeftX()/6 ,-m_driverController.getRightX()/6 ),
              m_drivetrain));
     
       Command shootCommand = makeShootCommand();

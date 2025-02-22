@@ -50,11 +50,16 @@ public class CANDrivetrain extends SubsystemBase {
     //leftRear.setSmartCurrentLimit(kCurrentLimit);
     //rightFront.setSmartCurrentLimit(kCurrentLimit);
     //rightRear.setSmartCurrentLimit(kCurrentLimit);
-    
-    SmartDashboard.putNumber("left front wheel", leftFront.getEncoder().getPosition());
-    SmartDashboard.putNumber("left rear wheel", leftRear.getEncoder().getPosition());
-    SmartDashboard.putNumber("right front wheel", rightFront.getEncoder().getPosition());
-    SmartDashboard.putNumber("right rear wheel", rightRear.getEncoder().getPosition());
+    /*public void periodic(){
+smartdashboard.putnumber("left front wheel", leftFront.getEncoder().getPosition());
+smartdashboard.putnumber("left rear wheel", leftRear.getEncoder().getPosition());
+smartdashboard.putnumber("right front wheel", rightFront.getEncoder().getPosition());
+smartdashboard.putnumber("right rear wheel", rightRear.getEncoder().getPosition());
+}*/
+    //SmartDashboard.putNumber("left front wheel", leftFront.getEncoder().getPosition());
+    //SmartDashboard.putNumber("left rear wheel", leftRear.getEncoder().getPosition());
+    //SmartDashboard.putNumber("right front wheel", rightFront.getEncoder().getPosition());
+    //SmartDashboard.putNumber("right rear wheel", rightRear.getEncoder().getPosition());
     // Put the front motors into the differential drive object. This will control all 4 motors with
     // the rears set to follow the fronts
     m_drivetrain = new MecanumDrive(leftFront, leftRear, rightFront, rightRear);
@@ -70,6 +75,8 @@ return new double[] {leftFront.getEncoder().getPosition(), leftRear.getEncoder()
    rightFront.getEncoder().getPosition(), rightRear.getEncoder().getPosition()};
 
 }
+
+
   @Override
   public void periodic() {
     /*This method will be called once per scheduler run. It can be used for running tasks we know we want to update each

@@ -48,4 +48,7 @@ public final class Constants {
 
     public static final double kLauncherDelay = 5;
   }
+  public static class speedConstant {
+    public static final double kSpeed = 2;
+  }
 }
